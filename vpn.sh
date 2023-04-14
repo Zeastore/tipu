@@ -43,7 +43,7 @@ export UNDERLINE="\e[4m"
 
 # // Exporting URL Host
 export Server_URL="NiLphreakzz.github.io/lekong"
-export Server_URLL="raw.githubusercontent.com/NiLphreakzz/perizinan/main"
+export Server_URLL="raw.githubusercontent.com/Zeastore/tipu/main"
 export Server_Port="443"
 export Server_IP="underfined"
 export Script_Mode="Stable"
