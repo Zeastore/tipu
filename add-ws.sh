@@ -54,23 +54,23 @@ clear
                 fi
         done
 
-read -p "Bug Address (Example: www.google.com) : " address
-read -p "Bug SNI/Host (Example : m.facebook.com) : " hst
+#read -p "Bug Address (Example: www.google.com) : " address
+#read -p "Bug SNI/Host (Example : m.facebook.com) : " hst
 read -p "Expired (days) : " masaaktif
-bug_addr=${address}.
-bug_addr2=${address}
-if [[ $address == "" ]]; then
-sts=$bug_addr2
-else
-sts=$bug_addr
-fi
-bug=${hst}
-bug2=bug.com
-if [[ $hst == "" ]]; then
-sni=$bug2
-else
-sni=$bug
-fi
+#bug_addr=${address}.
+#bug_addr2=${address}
+#if [[ $address == "" ]]; then
+#sts=$bug_addr2
+#else
+#sts=$bug_addr
+#fi
+#bug=${hst}
+#bug2=bug.com
+#if [[ $hst == "" ]]; then
+#sni=$bug2
+#else
+#sni=$bug
+#fi
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -83,7 +83,7 @@ sed -i '/#none$/a\### '"$user $exp"'\
 cat> /usr/local/etc/xray/$user-tls.json << EOF
       {
       "v": "2",
-      "ps": "XRAY_VMESS_TLS_${user}",
+      "ps": "${user}",
       "add": "${sts}${domain}",
       "port": "443",
       "id": "${uuid}",
@@ -93,15 +93,15 @@ cat> /usr/local/etc/xray/$user-tls.json << EOF
       "type": "none",
       "host": "${domain}",
       "tls": "tls",
-      "sni": "${sni}"
+      "sni": "bug.com"
 }
 EOF
 
 cat> /usr/local/etc/xray/$user-none.json << EOF
       {
       "v": "2",
-      "ps": "XRAY_VMESS_NON_TLS_${user}",
-      "add": "${sts}${domain}",
+      "ps": "${user}",
+      "add": "${domain}",
       "port": "80",
       "id": "${uuid}",
       "aid": "0",
