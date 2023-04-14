@@ -83,7 +83,7 @@ read -rp "Choose Your Domain Installation : " dom
 
 if test $dom -eq 1; then
 clear
-wget -q -O /root/cf.sh "https://${Server_URL}/cf.sh"
+wget -q -O /root/cf.sh "https://raw.githubusercontent.com/Zeadxt/aaa/main/cf.sh"
 chmod +x /root/cf.sh
 ./cf.sh
 elif test $dom -eq 2; then
