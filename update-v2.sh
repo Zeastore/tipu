@@ -6,7 +6,7 @@ purple='\e[0;35m'
 orange='\e[0;33m'
 NC='\e[0m'
 # // Exporting URL Host
-export Server_URL="raw.githubusercontent.com/NiLphreakzz/XRAY-MULTIPORT/main"
+export Server_URL="raw.githubusercontent.com/Zeastore/tipu/main"
 clear
 if [[ -e /usr/local/bin/xray ]]; then
      echo ""
