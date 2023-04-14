@@ -41,23 +41,10 @@ clear
 		fi
 	done
 
-read -p "Bug Address (Example: www.google.com) : " address
-read -p "Bug SNI/Host (Example : m.facebook.com) : " hst
+#read -p "Bug Address (Example: www.google.com) : " address
+#read -p "Bug SNI/Host (Example : m.facebook.com) : " hst
 read -p "Expired (days) : " masaaktif
-bug_addr=${address}.
-bug_addr2=${address}
-if [[ $address == "" ]]; then
-sts=$bug_addr2
-else
-sts=$bug_addr
-fi
-bug=${hst}
-bug2=bug.com
-if [[ $hst == "" ]]; then
-sni=$bug2
-else
-sni=$bug
-fi
+
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -73,8 +60,8 @@ systemctl restart xray@vless.service
 systemctl restart xray@vnone.service
 service cron restart
 
-vlesslink1="vless://${uuid}@${sts}${domain}:443?type=ws&encryption=none&security=tls&host=${domain}&path=/vless-tls&allowInsecure=1&sni=${sni}#XRAY_VLESS_TLS_${user}"
-vlesslink2="vless://${uuid}@${sts}${domain}:80?type=ws&encryption=none&security=none&host=${domain}&path=/vless-ntls#XRAY_VLESS_NON_TLS_${user}"
+vlesslink1="vless://${uuid}@${domain}:443?type=ws&encryption=none&security=tls&host=${domain}&path=/vless-tls&allowInsecure=1&sni=bug.com#${user}"
+vlesslink2="vless://${uuid}@${domain}:80?type=ws&encryption=none&security=none&host=${domain}&path=/vless-ntls#${user}"
 
 cat > /home/vps/public_html/$user-VLESSTLS.yaml <<EOF
 port: 7890
