@@ -74,25 +74,26 @@ mkdir /var/lib/crot-script;
 clear
 #echo -e "${red}♦️${NC} ${green}Established By NiLphreakzz 2022${NC} ${red}♦️${NC}"
 #DOWNLOAD SOURCE SCRIPT
-echo -e "${red}    ♦️${NC} ${green} CUSTOM SETUP DOMAIN VPS     ${NC}"
-echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo "1. Use Domain From Script / Gunakan Domain Dari Script"
-echo "2. Choose Your Own Domain / Pilih Domain Sendiri"
-echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-read -rp "Choose Your Domain Installation : " dom 
+#echo -e "${red}    ♦️${NC} ${green} CUSTOM SETUP DOMAIN VPS     ${NC}"
+#echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+#echo "1. Use Domain From Script / Gunakan Domain Dari Script"
+#echo "2. Choose Your Own Domain / Pilih Domain Sendiri"
+#echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+#read -rp "Choose Your Domain Installation : " dom 
 
-if test $dom -eq 1; then
-clear
-wget -q -O /root/cf.sh "https://raw.githubusercontent.com/Zeadxt/aaa/main/cf.sh"
-chmod +x /root/cf.sh
-./cf.sh
-elif test $dom -eq 2; then
+#if test $dom -eq 1; then
+#clear
+#wget -q -O /root/cf.sh "https://raw.githubusercontent.com/Zeadxt/aaa/main/cf.sh"
+#chmod +x /root/cf.sh
+#./cf.sh
+#elif test $dom -eq 2; then
+echo "MASUKKAN DOMAIN ANDA!!!!"
 read -rp "Enter Your Domain : " domen 
 echo $domen > /root/domain
-else 
+#else 
 echo "Not Found Argument"
-exit 1
-fi
+#exit 1
+#fi
 echo -e "${GREEN}Done!${NC}"
 sleep 2
 clear
