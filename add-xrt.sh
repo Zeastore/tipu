@@ -412,5 +412,5 @@ echo -e "Created On           : $hariini"
 echo -e "Expired On           : $exp"
 echo -e "═══════════════════"
 echo -e ""
-echo -e "Autoscript By NiLphreakzz"
+echo -e "FREE TUNNELING PROJECT"
 echo -e "" 
