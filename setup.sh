@@ -19,6 +19,7 @@ green='\e[0;32m'
 purple='\e[0;35m'
 orange='\e[0;33m'
 NC='\e[0m'
+export REPO="https://raw.githubusercontent.com/freetunnel/ftp/main"
 export Server_URL="raw.githubusercontent.com/Zeastore/tipu/main"
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
